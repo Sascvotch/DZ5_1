@@ -4,8 +4,13 @@ public class Main {
     public static void main(String[] args) {
 
        // task1();
-        task2();
-        task3();
+        // task2();
+        //task3();
+        task6();
+        task7();
+        task8();
+        task9();
+        task5();
     }
 
 
@@ -17,6 +22,76 @@ public class Main {
         }
         return arr;
     }
+    public static void task6() {
+
+        int[] arrBack = {5,4,3,2,1};
+        int[] arrForvard = new int [5];
+        int j=0;
+        for (int i=arrBack.length-1;i>=0;i--) {
+            arrForvard[j]=arrBack[i];
+            j=j+1;
+        }
+        System.out.println(Arrays.toString(arrForvard));
+    }
+    public static void task7() {
+
+        int[] arrBack = {5,8,2,3,9};
+        int arrElement=0 ;
+        int lengthHalf=arrBack.length/2;
+        System.out.println(Arrays.toString(arrBack));
+        for (int i = 0; i < lengthHalf ; i++) {
+            arrElement= arrBack[i];
+            arrBack[i]=arrBack[arrBack.length-1-i];
+            arrBack[arrBack.length-1-i]=arrElement;
+        }
+        System.out.println(Arrays.toString(arrBack));
+    }
+    public static void task8() {
+
+        int[] arrBack = {-6,2,5,-8,8,10,4,-7,12,1};
+        boolean noFindCounts=true;
+
+            for (int i = 0; i < arrBack.length && noFindCounts ; i++) {
+                for (int y=i+1;y<arrBack.length && noFindCounts;y++) {
+                        if (arrBack[i] + arrBack[y] == 2) {
+                            System.out.println("Задача 8 -- Это числа: "+arrBack[i] + " и " + arrBack[y]);
+                            noFindCounts = false;
+                        }
+                   }
+                }
+            }
+
+    public static void task9() {
+
+        int[] arrBack = {-6,2,5,-8,8,10,4,-7,12,1};
+        boolean noFindCounts=true;
+
+            for (int i = 0; i < arrBack.length; i++) {
+                for (int y=i+1;y<arrBack.length;y++) {
+                    if (arrBack[i] + arrBack[y] == 2) {
+                        System.out.println("Задача 9 -- Это числа: "+arrBack[i] + " и " + arrBack[y]);
+
+                    }
+                }
+            }
+       // }
+    }
+    public static void task5() {
+        int[][] matrix = new int [3][3];
+        for (int i=0;i<matrix.length;i++){
+            matrix[i][i]=1;
+            matrix[matrix.length-1-i][i]=1;
+
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
 
     public static void task2() {
         int[] arr = generateRandomArray();
